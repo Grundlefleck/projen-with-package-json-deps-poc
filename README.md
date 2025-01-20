@@ -21,3 +21,13 @@ During Projen run, the following happens:
 3. projen will then write package.json with merged dependencies, favouring what exists in package.json
 
 This lets third-party tools which do not understand projenrc.ts (or the package manager's lockfile) to suggest edits to package.json which will be retained by projen.
+
+## Caveats
+
+1. An upgrade of Projen may not automatically update it's own devDependencies.
+2. dependencies are only read from package.json, not from the lockfile.
+
+
+# Alternatives
+ - NodeProject's [Dependency Upgrades](https://projen.io/docs/project-types/node/#dependency-upgrades) 
+ - Dependabots [lockfile-only](https://docs.github.com/en/code-security/dependabot/working-with-dependabot/dependabot-options-reference) option 
